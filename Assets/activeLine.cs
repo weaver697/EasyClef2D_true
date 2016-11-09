@@ -13,8 +13,8 @@ public class activeLine : MonoBehaviour {
 	Color color;
 	Color colorAlpha;
 	bool pressed = false;
-
-
+	public bool createMode;
+	public GameObject n;
 
 	void Awake () {
 		sprite = GetComponent<SpriteRenderer> ();
@@ -26,30 +26,35 @@ public class activeLine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (key) && active) 
-		{
-			Destroy(note);
-			AddScore ();
-			active = false;
 
-		}
-		if (Input.GetKeyDown (key)) 
-		{
-			sprite.color = colorAlpha;
-			source.Stop();
-			source.volume = 1f;
-			source.Play();
-			pressed = true;
-		}
-		if (Input.GetKeyUp (key))
-		{
-			sprite.color = color;
-			//source.Stop ();
-			pressed = false;
-			StartCoroutine(fadeOut());
-			StartCoroutine(ExecuteAfterTime(1.5f));
+		if (createMode) {
+			if (Input.GetKeyDown (key)) {
+				Instantiate (n, transform.position, Quaternion.identity);
+			}
+		} else {
+			if (Input.GetKeyDown (key) && active) {
+				Destroy (note);
+				AddScore ();
+				active = false;
 
+			}
+			if (Input.GetKeyDown (key)) {
+				sprite.color = colorAlpha;
+				source.Stop ();
+				source.volume = 1f;
+				source.Play ();
+				pressed = true;
+			}
+			if (Input.GetKeyUp (key)) {
+				sprite.color = color;
+				//source.Stop ();
+				pressed = false;
+				StartCoroutine (fadeOut ());
+				StartCoroutine (ExecuteAfterTime (1.5f));
+
+			}
 		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

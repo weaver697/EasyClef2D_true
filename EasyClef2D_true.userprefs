@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/activeLine.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/activeLine.cs" Line="44" Column="4" />
-      <File FileName="Assets/noteScript.cs" Line="24" Column="2" />
-      <File FileName="Assets/PPText.cs" Line="11" Column="3" />
+      <File FileName="Assets/activeLine.cs" Line="1" Column="1" />
+      <File FileName="Assets/noteScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/PPText.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
